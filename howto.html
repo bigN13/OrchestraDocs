@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Creating the shell &mdash; Orchestra Documentation 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Orchestra Documentation 1.0 documentation" href="index.html" />
+    <link rel="prev" title="External libraries explained" href="libraries.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="libraries.html" title="External libraries explained"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Orchestra Documentation 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Creating the shell</a><ul>
+<li><a class="reference internal" href="#creating-the-project-and-solution">Creating the project and solution</a></li>
+<li><a class="reference internal" href="#adding-orchestra-using-nuget">Adding Orchestra using NuGet</a></li>
+<li><a class="reference internal" href="#running-the-shell-for-the-first-time">Running the shell for the first time</a></li>
+<li><a class="reference internal" href="#customizing-the-splash-screen">Customizing the splash screen</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#creating-modules">Creating modules</a><ul>
+<li><a class="reference internal" href="#creating-the-project">Creating the project</a></li>
+<li><a class="reference internal" href="#id1">Adding Orchestra using NuGet</a></li>
+<li><a class="reference internal" href="#renaming-the-module-class">Renaming the module class</a></li>
+<li><a class="reference internal" href="#adding-a-ribbon-item">Adding a ribbon item</a></li>
+<li><a class="reference internal" href="#showing-a-document-view">Showing a document view</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="libraries.html"
+                        title="previous chapter">External libraries explained</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/howto.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="creating-the-shell">
+<h1>Creating the shell<a class="headerlink" href="#creating-the-shell" title="Permalink to this headline">¶</a></h1>
+<p>When using Orchestra, the first thing that needs to be done is to create the shell. This will make sure that your application actually starts up and can be extended.</p>
+<p><em>Note that this guide also includes some best practices, which are not required but we strongly advise you to follow them</em></p>
+<p><em>Note that project templates are available and this guide assumes that they are installed on the machine</em></p>
+<div class="section" id="creating-the-project-and-solution">
+<h2>Creating the project and solution<a class="headerlink" href="#creating-the-project-and-solution" title="Permalink to this headline">¶</a></h2>
+<p>Create a new Orchestra Shell application:</p>
+<img alt="_images/2.jpg" src="_images/2.jpg" />
+<p>Make sure that your directory structure looks like this after you created the project and solution (move the files if you have to):</p>
+<img alt="_images/3.png" src="_images/3.png" />
+<p>Open the solution again and make sure to create solution folders in the solution explorer. This will make sure that the application stays structured and easy to maintain:</p>
+<img alt="_images/4.png" src="_images/4.png" />
+<p><em>Note that the solution directory don&#8217;t have to reflect the directories on disk</em></p>
+</div>
+<div class="section" id="adding-orchestra-using-nuget">
+<h2>Adding Orchestra using NuGet<a class="headerlink" href="#adding-orchestra-using-nuget" title="Permalink to this headline">¶</a></h2>
+<p><em>Note that as long as the packages are not available yet, this has to be done manually</em></p>
+<p>Now the solution and the shell project are created, it is time to start integrating Orchestra. You can do this by adding the <em>Orchestra.Shell</em>
+NuGet package. This package will automatically add references to all dependent 3<sup>rd</sup> party libraries.</p>
+</div>
+<div class="section" id="running-the-shell-for-the-first-time">
+<h2>Running the shell for the first time<a class="headerlink" href="#running-the-shell-for-the-first-time" title="Permalink to this headline">¶</a></h2>
+<p>Now run the application, it will look like this and the empty shell is
+ready to be customized.</p>
+<img alt="_images/5.jpg" src="_images/5.jpg" />
+</div>
+<div class="section" id="customizing-the-splash-screen">
+<h2>Customizing the splash screen<a class="headerlink" href="#customizing-the-splash-screen" title="Permalink to this headline">¶</a></h2>
+<p>The splash screen can either be turned off or customized with a custom image.</p>
+<p>The turn off the splash screen, change the call in <em>App.xaml.cs</em> from:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">bootstrapper</span><span class="o">.</span><span class="n">RunWithSplashScreen</span><span class="o">&lt;</span><span class="n">ProgressNotifyableViewModel</span><span class="o">&gt;</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>to:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">bootstrapper</span><span class="o">.</span><span class="n">Run</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>To use a custom splash screen, add an image of 465 x 286 to the Resources/Images directory. Make sure to set the build step to <em>Content</em> and set <em>Copy to output is Copy if newer.</em></p>
+<p>If the image is invalid or cannot be found, Orchestra will fall back to its default splash screen.</p>
+</div>
+</div>
+<div class="section" id="creating-modules">
+<h1>Creating modules<a class="headerlink" href="#creating-modules" title="Permalink to this headline">¶</a></h1>
+<p>A module is a separate piece of functionality that can be added to the
+orchestra shell. Orchestra heavily relies on Prism for this part
+(modularity).</p>
+<div class="section" id="creating-the-project">
+<h2>Creating the project<a class="headerlink" href="#creating-the-project" title="Permalink to this headline">¶</a></h2>
+<p>To add a module, a new project must be created. Add a new project
+(Orchestra.Module) and give it a name, in this case
+<em>OxyGen.Modules.About.</em></p>
+</div>
+<div class="section" id="id1">
+<h2>Adding Orchestra using NuGet<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p><em>Note that as long as the packages are not available yet, this has to be
+done manually</em></p>
+<p>Now the solution and the shell project are created, it is time to start
+integrating Orchestra. You can do this by adding the <em>Orchestra.Module</em>
+NuGet package. This package will automatically add references to all
+dependent 3<sup>rd</sup> party libraries.</p>
+</div>
+<div class="section" id="renaming-the-module-class">
+<h2>Renaming the module class<a class="headerlink" href="#renaming-the-module-class" title="Permalink to this headline">¶</a></h2>
+<p>Each module must have one class defining that it&#8217;s a module. The project
+template automatically creates a module class called MyModule. This
+class has to be renamed to the right module name, in this case
+<em>AboutModule</em>:</p>
+<div class="highlight-python"><pre>/// &lt;summary&gt;
+/// The about module.
+/// &lt;/summary&gt;
+public class AboutModule : Orchestra.Modules.ModuleBase
+{
+    /// &lt;summary&gt;
+    /// Initializes the about module.
+    /// &lt;/summary&gt;
+    public AboutModule()
+        : base(&quot;About&quot;)
+    {
+    }
+}</pre>
+</div>
+<p>The module can now be customized by adding views, view models, etc to
+it. There are a few services that allow the communication between the
+module and the shell. The most important one is the <em>IOrchestraService</em>.
+It can be retrieved like this:</p>
+<div class="highlight-python"><pre>var orchestraService = GetService&lt;IOrchestraService&gt;();</pre>
+</div>
+</div>
+<div class="section" id="adding-a-ribbon-item">
+<h2>Adding a ribbon item<a class="headerlink" href="#adding-a-ribbon-item" title="Permalink to this headline">¶</a></h2>
+<p>A ribbon item is an item that is shown at the top of the ribbon. Below
+is an example of how to add a ribbon item that will show a document:</p>
+<div class="highlight-python"><pre>var openRibbonItem = new RibbonItem(ModuleName, ModuleName, &quot;Open&quot;, new Command(() =&gt; orchestraService.ShowDocument&lt;BrowserViewModel&gt;()));
+orchestraService.AddRibbonItem(openRibbonItem);</pre>
+</div>
+<p>This code will add a ribbon item with the name of the module and the
+action <em>Open</em>. When the action is executed,
+<em>orchestraService.ShowDocument()</em> will be executed.</p>
+</div>
+<div class="section" id="showing-a-document-view">
+<h2>Showing a document view<a class="headerlink" href="#showing-a-document-view" title="Permalink to this headline">¶</a></h2>
+<p>Showing a document is very easy. Assuming that there is a view and view
+model, this is the only code to be called:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">orchestraService</span><span class="o">.</span><span class="n">ShowDocument</span><span class="o">&lt;</span><span class="n">BrowserViewModel</span><span class="o">&gt;</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><em>Index</em></a></li>
+<li><a class="reference internal" href="py-modindex.html"><em>Module Index</em></a></li>
+<li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="libraries.html" title="External libraries explained"
+             >previous</a> |</li>
+        <li><a href="index.html">Orchestra Documentation 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Dimitris Nemtsov.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>
