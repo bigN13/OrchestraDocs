@@ -660,7 +660,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#abbc6f', end
   margin-bottom: 6em;
 }
 #content .row {
-  margin-bottom: 5em;
+  /*margin-bottom: 5em;*/
 }
 #content .row:last-child {
   margin-bottom: 0;
