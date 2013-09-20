@@ -289,7 +289,7 @@ body.fixed-header .navbar {
   width: 100%;
 }
 #toc {
-  /*position: fixed;*/
+  width: 220px;
 }
 .layout {
   width: 940px;

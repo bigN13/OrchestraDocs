@@ -51,15 +51,15 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="brand" href="index.html"><img src="_static/orchestra_logo.png" alt="Logo" /></a>
+			<a class="brand" href="welcome.html"><img src="_static/orchestra_logo.png" alt="Logo" /></a>
 			<div class="nav-collapse collapse">
 				<ul class="nav pull-left">
-					<li class="active"><a href="index.html">Home</a></li>
-					<li ><a href="#">Repository</a></li>  
-					<li ><a href="#">Docs</a></li>
+					<li ><a href="index.html">Home</a></li>
+					<li ><a href="https://github.com/Orcomp/Orchestra">Repository</a></li>  
+					<li class="active"><a href="intro.html">Docs</a></li>
 				</ul>
 				<ul class="nav pull-right">	
-					<li><a href="#" class="action btn-danger"><i class="icon-download-alt"></i> Download</a></li>
+					<li><a href="https://github.com/Orcomp/Orchestra/archive/master.zip" class="action btn-danger"><i class="icon-download-alt"></i> Download</a></li>
 					<li class="divider-vertical"></li>	 
 				</ul>
 			</div> <!-- /.nav-collapse -->
@@ -418,7 +418,16 @@ model, this is the only code to be called:</p>
             </div> <!-- /.container -->
 
         </footer>
-
+<script> 
+ $('#toc').affix({
+    offset: {
+      top: 50
+    , bottom: function () {
+        return (this.bottom = $('#extra').outerHeight(true))
+      }
+    }
+  })
+</script>
     </body>
 
     <div class="footer">

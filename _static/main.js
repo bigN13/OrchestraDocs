@@ -106,6 +106,4 @@ function enableBackToTop () {
           scrollTop: 0
       }, 600);
   });
-
-
 }
