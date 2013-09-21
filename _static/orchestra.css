@@ -291,6 +291,9 @@ body.fixed-header .navbar {
 #toc {
   width: 220px;
 }
+.affix {
+    top: 90px;
+}
 .layout {
   width: 940px;
   margin: 0 auto 4em;
@@ -659,9 +662,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#abbc6f', end
 #content {
   margin-bottom: 6em;
 }
-#content .row {
-  /*margin-bottom: 5em;*/
-}
+
 #content .row:last-child {
   margin-bottom: 0;
 }
@@ -2121,7 +2122,7 @@ ul.testimonial-list.filled blockquote:before {
   width: 30px;
   height: 30px;
   background: rgba(0, 0, 0, 0.5);
-  background: url(../img/magnifier.png) no-repeat 0 0;
+  background: url(../_static/magnifier.png) no-repeat 0 0;
   transition: opacity 0.5s ease-in-out;
 }
 /*------------------------------------------------------------------
@@ -2160,7 +2161,7 @@ ul.testimonial-list.filled blockquote:before {
   right: 10px;
 }
 #search-container #search-submit {
-  background: url(../img/search-button.html) no-repeat center;
+  background: url(../_static/search-button.html) no-repeat center;
 }
 .clearfix {
   *zoom: 1;
@@ -2215,4 +2216,15 @@ ul.testimonial-list.filled blockquote:before {
 }
 .lt-ie9 .works .work:hover .work-hover {
   display: block;
+}
+
+/*------------------------------------------------------------------
+[ Search / #bready ]
+*/
+#bready li {
+	display: inline-block;
+}
+
+.inline-block li {
+	display: inline-block;
 }

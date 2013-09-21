@@ -1,5 +1,7 @@
 $(function () {
 
+  enableMenuAffix ();
+  
   enableSidetabs ();
 
   enableLightbox ();
@@ -13,10 +15,7 @@ $(function () {
   enableContactMap ();
   
   enableTocFreeze();
-
 });
-
-
 
 
 function enableSidetabs () {
@@ -106,4 +105,15 @@ function enableBackToTop () {
           scrollTop: 0
       }, 600);
   });
+}
+
+function enableMenuAffix () {
+	$('#toc').affix({
+		offset: {
+		  top: 50
+		, bottom: function () {
+			return (this.bottom = $('#extra').outerHeight(true))
+		  }
+		}
+	  });
 }
