@@ -1,4 +1,0 @@
-OrchestraDocs
-=============
-
-Documentation for Orchestra
